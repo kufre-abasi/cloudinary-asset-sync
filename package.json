@@ -1,0 +1,82 @@
+{
+  "name": "cloudinary-asset-sync",
+  "displayName": "Cloudinary Asset Sync Pro",
+  "version": "1.0.0",
+  "engines": {
+    "vscode": "^1.85.0"
+  },
+  "activationEvents": [
+    "onCommand:cloudinary.sync",
+    "onCommand:cloudinary.watch",
+    "onCommand:cloudinary.openPanel",
+    "onCommand:cloudinary.diff"
+  ],
+  "contributes": {
+    "commands": [
+      {
+        "command": "cloudinary.sync",
+        "title": "Cloudinary: Sync Assets"
+      },
+      {
+        "command": "cloudinary.watch",
+        "title": "Cloudinary: Watch Mode"
+      },
+      {
+        "command": "cloudinary.openPanel",
+        "title": "Cloudinary: Open Dashboard"
+      },
+      {
+        "command": "cloudinary.diff",
+        "title": "Cloudinary: Show Diff"
+      }
+    ],
+    "configuration": {
+      "type": "object",
+      "properties": {
+        "cloudinarySync.assetPath": {
+          "type": "string",
+          "default": "src/assets"
+        },
+        "cloudinarySync.mode": {
+          "type": "string",
+          "default": "safe",
+          "enum": [
+            "safe",
+            "auto"
+          ]
+        }
+      }
+    }
+  },
+  "main": "out/extension.js",
+  "scripts": {
+    "vscode:prepublish": "npm run compile",
+    "compile": "npx tsc -p ./",
+    "watch": "npx tsc -p ./ --watch",
+    "pretest": "npm run compile && npm run lint",
+    "lint": "npx eslint src --ext ts",
+    "test": "node ./out/test/runTest.js"
+  },
+  "dependencies": {
+    "@babel/core": "^7.23.0",
+    "@babel/generator": "^7.23.0",
+    "@babel/parser": "^7.23.0",
+    "@babel/traverse": "^7.23.0",
+    "chokidar": "^3.5.3",
+    "cloudinary": "^2.10.0",
+    "diff": "^9.0.0",
+    "fast-glob": "^3.3.1"
+  },
+  "devDependencies": {
+    "@babel/preset-env": "^7.23.0",
+    "@babel/preset-typescript": "^7.23.0",
+    "@types/babel__generator": "^7.27.0",
+    "@types/babel__traverse": "^7.28.0",
+    "@types/node": "^20.0.0",
+    "@types/vscode": "^1.85.0",
+    "@typescript-eslint/eslint-plugin": "^8.59.1",
+    "@typescript-eslint/parser": "^8.59.1",
+    "eslint": "^8.0.0",
+    "typescript": "^5.0.0"
+  }
+}
