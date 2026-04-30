@@ -1,0 +1,14 @@
+.vscode/**
+.vscode-test/**
+out/test/**
+src/**
+.gitignore
+.yarnrc
+.npmrc
+vss-extension.json
+webpack.config.js
+babel.config.js
+tsconfig.json
+**/*.map
+**/*.ts
+!out/**/*.js
