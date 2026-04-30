@@ -1,12 +1,11 @@
-import { Command, window, Uri } from 'vscode';
+import { commands, window, Uri } from 'vscode';
 
 export function registerDiff(context: any) {
-  return command.registerCommand('cloudinary.diff', async () => {
+  return commands.registerCommand('cloudinary.diff', async () => {
     // Placeholder for diff functionality
     window.showInformationMessage('Diff command not implemented yet');
   });
 }
-
 
 export function showDiff(before: string, after: string) {
   const left = Uri.parse('before.js');
