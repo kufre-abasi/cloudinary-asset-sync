@@ -1,17 +1,18 @@
-import * as vscode from 'vscode';
+import { Command, window, Uri } from 'vscode';
 
-export function registerDiff(context: vscode.ExtensionContext) {
-  return vscode.commands.registerCommand('cloudinary.diff', async () => {
+export function registerDiff(context: any) {
+  return command.registerCommand('cloudinary.diff', async () => {
     // Placeholder for diff functionality
-    vscode.window.showInformationMessage('Diff command not implemented yet');
+    window.showInformationMessage('Diff command not implemented yet');
   });
 }
 
-export function showDiff(before: string, after: string) {
-  const left = vscode.Uri.parse('before.js');
-  const right = vscode.Uri.parse('after.js');
 
-  vscode.commands.executeCommand(
+export function showDiff(before: string, after: string) {
+  const left = Uri.parse('before.js');
+  const right = Uri.parse('after.js');
+
+  commands.executeCommand(
     'vscode.diff',
     left,
     right,
